@@ -5,27 +5,51 @@ body {
     cursor: default;
 }
 
-/* Contenitore con l'arte ASCII*/
+/* Contenitore con l'arte ASCII */
 .container {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%); 
+    
+    zoom: 0.76;
+    -moz-transform: scale(0.76);
+    
 }
 
-/* Spazia bene tra i singoli caratteri ASCII */
+/* Gestisce i caratteri ASCII */
 pre {
-    font-size:8pt;
+    font-size:6pt;
     letter-spacing:4px;
     line-height:8pt;
     font-weight:bold;
 }
 
-/* Easter egg camouflage */
+/* Link a Linkedn nascosto */
 a {
     text-decoration: none;
     color: inherit;
 }
 
 
+/* Media query con le regole desktop 
+   sfrutta lo zoom per la versione mobile */
+@media screen and (min-width: 480px) {
+    pre {
+        font-size:8pt;
+        letter-spacing:4px;
+        line-height:8pt;
+        font-weight:bold;
+    }
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%); 
+        
+        zoom: 1;
+        -moz-transform: scale(1);
+    }
+}
